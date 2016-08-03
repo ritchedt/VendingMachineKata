@@ -20,10 +20,10 @@ Scenario Outline: Accepting valid coins
 		| nickel	| $0.05					|
 
 		
-		
+@wip		
 Scenario: Not accepting invalid coins
 	Given I want to use a vending machine
 	And the vending machine display shows INSERT COIN
 	When I insert a penny into the coin slot
-	Then the vending machine display shows INSERT COIN
-	And all coins are returned in the change slot
+	Then all coins are returned in the change slot
+	And the vending machine display shows INSERT COIN

@@ -3,23 +3,24 @@
   <groupId>VendingMachineKata</groupId>
   <artifactId>VendingMachineKata</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
   <dependencies>
-	<dependency>
-		<groupId>info.cukes</groupId>
-		<artifactId>cucumber-java</artifactId>
-		<version>1.2.0</version>
-	</dependency>
 	<dependency>
 	    <groupId>info.cukes</groupId>
 	    <artifactId>cucumber-java</artifactId>
-	    <version>1.2.0</version>
+	    <version>1.2.4</version>
 	    <scope>test</scope>
 	</dependency>
 	<dependency>
       <groupId>info.cukes</groupId>
       <artifactId>cucumber-junit</artifactId>
-      <version>1.1.7</version>
+      <version>1.2.4</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+       <groupId>info.cukes</groupId>
+       <artifactId>cucumber-testng</artifactId>
+       <version>1.2.4</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -28,7 +29,8 @@
       <scope>test</scope>
     </dependency>
  </dependencies>
-  <build>
+ 
+ <build>
     <testResources>
       <testResource>
         <directory>src/test/java</directory>
@@ -48,4 +50,5 @@
       </plugin>
     </plugins>
   </build>
+  
 </project>

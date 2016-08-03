@@ -7,10 +7,10 @@ import cucumber.api.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 	plugin = {"html:target/cucumber"},
-	features = {"src/test/java/resources"},
-	glue = {"src/test/java/resources"},
+	features = {"classpath:features/"},
+	glue = {"resources"},
 	monochrome = true,
-	dryRun = true
+	tags = {"~@wip"}
 )
 public class CucumberRunner {
 
