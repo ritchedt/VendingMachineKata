@@ -1,6 +1,6 @@
 #Author: Drew Ritcher
 
-@wip
+
 Feature: Return Coins
 	As a customer
 	I want to have my money returned

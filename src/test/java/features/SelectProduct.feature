@@ -1,6 +1,6 @@
 #Author: Drew Ritcher
 
-@wip
+
 Feature: Select Products
 	As a vendor
 	I want customers to select products
@@ -10,17 +10,15 @@ Feature: Select Products
 Scenario Outline: Selecting a product
 	Given I want to use a vending machine
 	And the vending machine display shows INSERT COIN
-	When I insert <moneyInserted> into the machine
+	When I insert $<moneyInserted> into the machine
 	And I select the <product> option
-	Then the <product> is dispenced
-	And the current total amount is $0.00
 	And the vending machine display shows THANK YOU
 	
 	Examples: Purchasing a product
 		| moneyInserted		| product	|
-		| $1.00						|	cola		|
-		| $0.50						|	chips		|
-		| $0.65						|	candy		|
+		| 1.00						|	cola		|
+		| 0.50						|	chips		|
+		| 0.65						|	candy		|
 
 		
 		
