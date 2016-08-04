@@ -4,10 +4,10 @@ public class Coin {
 
 	String coinWeight, coinSize;
 	
-	public Coin(String weight, String size){
+	public Coin(String coinWeight, String coinSize){
 		
-		coinWeight = weight;
-		coinSize = size;
+		this.coinWeight = coinWeight;
+		this.coinSize = coinSize;
 	}
 	
 	public String getWeight(){

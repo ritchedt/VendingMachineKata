@@ -1,6 +1,6 @@
 #Author: Drew Ritcher
 
-@wip
+
 Feature: Make Change
 	As a vendor
 	I want customers to receive correct change
@@ -12,8 +12,7 @@ Scenario: Selecting a product
 	And the vending machine display shows INSERT COIN
 	When I insert $1.00 into the machine
 	And I select the candy option
-	Then the candy is dispenced
-	And the remaining amount is returned in the change slot
+	Then $0.35 is returned in the change slot
 	
 
 		

@@ -23,11 +23,16 @@ public class VendingMachine {
 	private String displayValue;
 	
 	private static final HashMap<String,Double> currencyValue = new HashMap<String,Double>();
+	private static final HashMap<String,Double> productValue = new HashMap<String,Double>();
 	
 	static{
 		currencyValue.put("quarter",0.25);
 		currencyValue.put("dime",0.10);
 		currencyValue.put("nickel",0.05);
+		
+		productValue.put("cola", 1.00);
+		productValue.put("chips", 0.50);
+		productValue.put("candy", 0.65);
 	}
 	
 	
@@ -42,19 +47,50 @@ public class VendingMachine {
 		displayValue = "INSERT COIN";
 	}
 	
+	public VendingMachine(double changeAmountInMachine){
+		colaInStock = 50;
+		chipsInStock = 50;
+		candyInStock = 50;
+		
+		currentAmountInsertedInMachine = 0;
+		this.changeAmountInMachine = changeAmountInMachine;
+		
+		displayValue = "EXACT CHANGE ONLY";
+	}
+	
 	
 	public void insertCoin(Coin coin){
 		
-		if(coin.getWeight().equalsIgnoreCase(QUARTER_WEIGHT) && coin.getSize().equalsIgnoreCase(QUARTER_SIZE))
+		if(coin.getWeight().equalsIgnoreCase(QUARTER_WEIGHT) && coin.getSize().equalsIgnoreCase(QUARTER_SIZE)){
 			currentAmountInsertedInMachine += QUARTER_VALUE;
-		else if(coin.getWeight().equalsIgnoreCase(DIME_WEIGHT) && coin.getSize().equalsIgnoreCase(DIME_SIZE))
+			displayValue = "$" + String.format("%.2f", currentAmountInsertedInMachine);
+		}else if(coin.getWeight().equalsIgnoreCase(DIME_WEIGHT) && coin.getSize().equalsIgnoreCase(DIME_SIZE)){
 			currentAmountInsertedInMachine += DIME_VALUE;
-		else if(coin.getWeight().equalsIgnoreCase(NICKEL_WEIGHT) && coin.getSize().equalsIgnoreCase(NICKEL_SIZE))
+			displayValue = "$" + String.format("%.2f", currentAmountInsertedInMachine);
+		}else if(coin.getWeight().equalsIgnoreCase(NICKEL_WEIGHT) && coin.getSize().equalsIgnoreCase(NICKEL_SIZE)){
 			currentAmountInsertedInMachine += NICKEL_VALUE;
-		else
+			displayValue = "$" + String.format("%.2f", currentAmountInsertedInMachine);
+		}else
 			returnInvalidCoin(coin);
-		
-		displayValue = "$" + String.format("%.2f", currentAmountInsertedInMachine);
+	}
+	
+	
+	public void selectProduct(String product){
+		switch(product) {
+			case "cola":
+				colaInStock -= 1;
+				currentAmountInsertedInMachine -= productValue.get(product);
+				displayValue = "$" + String.format("%.2f", currentAmountInsertedInMachine);
+				break;
+			case "chips":
+				chipsInStock -= 1;
+				currentAmountInsertedInMachine -= productValue.get(product);
+				displayValue = "$" + String.format("%.2f", currentAmountInsertedInMachine);
+			case "candy":
+				candyInStock -= 1;
+				currentAmountInsertedInMachine -= productValue.get(product);
+				displayValue = "$" + String.format("%.2f", currentAmountInsertedInMachine);
+		}
 	}
 	
 	
@@ -66,9 +102,12 @@ public class VendingMachine {
 		return currentAmountInsertedInMachine;
 	}
 	
-	public void returnAllCoins(){
+	public double returnAllRemainingCoins(){
+		double remainingCoins = currentAmountInsertedInMachine;
 		currentAmountInsertedInMachine = 0;
+		return remainingCoins;
 	}
+	
 	
 	public void returnInvalidCoin(Coin coin){
 		coin = null;

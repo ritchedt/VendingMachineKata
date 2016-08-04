@@ -14,12 +14,11 @@ public class VendingMachineStepDefinition {
 		vendingMachine = new VendingMachine();
 	}
 	
-	
-	@And("^the vending machine display shows (.*)$")
-	public void vendingMachineDisplay(String displayValue){
-		String returnedDispayValue = vendingMachine.getDisplayValue();
-		assertTrue("Actual: "+ returnedDispayValue, displayValue.equals(returnedDispayValue));
+	@Given("^I want to use a vending machine that only accepts exact change$")
+	public void iWantToUseAVendingMachineThatOnlyAcceptsExactChange(){
+		vendingMachine = new VendingMachine(0);
 	}
+	
 	
 	@When("^I insert a (\\w+) into the coin slot$")
 	public void insertCoinInSlot(String coin){
@@ -34,8 +33,51 @@ public class VendingMachineStepDefinition {
 			vendingMachine.insertCoin(new Coin("3g", "19mm"));
 	}
 	
+	@When("^there are no coins inserted into the vending machine$")
+	public void noCoinsInVendingMachine(){
+		assertTrue(vendingMachine.getAmountInsertedIntoMachine() == 0);
+	}
 	
-
+	@When("^I insert \\$(\\d{0,2}.\\d{2}) into the machine$")
+	public void insertMoneyIntoTheMachine(String amount){
+		double amountInsertedMachine = Double.parseDouble(amount);
+		double amountCurrenlyInMachine = vendingMachine.getAmountInsertedIntoMachine();
+		
+		 while(amountInsertedMachine != amountCurrenlyInMachine){
+			
+			if(0.25 % (amountInsertedMachine-amountCurrenlyInMachine) == 0.25)
+				vendingMachine.insertCoin(new Coin("6g", "24mm"));
+			else if(0.10 % (amountInsertedMachine-amountCurrenlyInMachine) == 0.10)
+				vendingMachine.insertCoin(new Coin("2g", "18mm"));
+			else if(0.05 % (amountInsertedMachine-amountCurrenlyInMachine) == 0.05)
+				vendingMachine.insertCoin(new Coin("5g", "21mm"));
+			
+			amountCurrenlyInMachine = vendingMachine.getAmountInsertedIntoMachine();
+		}
+	}
+	
+	
+	@Then("^all coins are returned in the change slot$")
+	public void allCoinsReturnedInTheChangeSlot(){
+		assertTrue(vendingMachine.getAmountInsertedIntoMachine() == 0);
+	}
+	
+	@Then("^\\$(\\d{0,2}.\\d{2}) is returned in the change slot$")
+	public void allRemainingAmountIsReturnedInChangeSlot(String amount){
+		assertTrue(vendingMachine.returnAllRemainingCoins() == Double.parseDouble(amount));
+	}
+	
+	
+	@And("^the vending machine display shows (.*)$")
+	public void vendingMachineDisplay(String displayValue){
+		String returnedDispayValue = vendingMachine.getDisplayValue();
+		assertTrue("Actual: "+ returnedDispayValue, displayValue.equals(returnedDispayValue));
+	}
+	
+	@And("^I select the (.*) option$")
+	public void selectingAProductOption(String product){
+		vendingMachine.selectProduct(product);
+	}
 	
 	
 	
