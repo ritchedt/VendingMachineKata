@@ -1,9 +1,10 @@
 package drewclasses;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 
 public class VendingMachine {
-
+	
 	private int colaInStock, chipsInStock, candyInStock;
 	
 	private double currentAmountInsertedInMachine, changeAmountInMachine;
@@ -20,7 +21,7 @@ public class VendingMachine {
 	private final String NICKEL_SIZE = "21mm";
 	private final double NICKEL_VALUE = 0.05;
 	
-	private String displayValue;
+	private String defaultDisplayValue,displayValue;
 	
 	private static final HashMap<String,Double> currencyValue = new HashMap<String,Double>();
 	private static final HashMap<String,Double> productValue = new HashMap<String,Double>();
@@ -44,7 +45,8 @@ public class VendingMachine {
 		currentAmountInsertedInMachine = 0;
 		changeAmountInMachine = 25;
 		
-		displayValue = "INSERT COIN";
+		defaultDisplayValue = "INSERT COIN";
+		displayValue = defaultDisplayValue;
 	}
 	
 	public VendingMachine(double changeAmountInMachine){
@@ -55,7 +57,8 @@ public class VendingMachine {
 		currentAmountInsertedInMachine = 0;
 		this.changeAmountInMachine = changeAmountInMachine;
 		
-		displayValue = "EXACT CHANGE ONLY";
+		defaultDisplayValue = "EXACT CHANGE ONLY";
+		displayValue = defaultDisplayValue;
 	}
 	
 	
@@ -78,19 +81,37 @@ public class VendingMachine {
 	public void selectProduct(String product){
 		switch(product) {
 			case "cola":
+				if(currentAmountInsertedInMachine < productValue.get(product)){
+					displayValue = "PRICE $" + String.format("%.2f", productValue.get(product));
+					break;
+				}
 				colaInStock -= 1;
 				currentAmountInsertedInMachine -= productValue.get(product);
-				displayValue = "$" + String.format("%.2f", currentAmountInsertedInMachine);
+				if(currentAmountInsertedInMachine==0)
+					displayValue = "THANK YOU";
 				break;
 			case "chips":
+				if(currentAmountInsertedInMachine < productValue.get(product)){
+					displayValue = "PRICE $" + String.format("%.2f", productValue.get(product));
+					break;
+				}
 				chipsInStock -= 1;
 				currentAmountInsertedInMachine -= productValue.get(product);
-				displayValue = "$" + String.format("%.2f", currentAmountInsertedInMachine);
+				if(currentAmountInsertedInMachine==0)
+					displayValue = "THANK YOU";
+				break;
 			case "candy":
+				if(currentAmountInsertedInMachine < productValue.get(product)){
+					displayValue = "PRICE $" + String.format("%.2f", productValue.get(product));
+					break;
+				}
 				candyInStock -= 1;
 				currentAmountInsertedInMachine -= productValue.get(product);
-				displayValue = "$" + String.format("%.2f", currentAmountInsertedInMachine);
+				if(currentAmountInsertedInMachine==0)
+					displayValue = "THANK YOU";
+				break;
 		}
+		getDisplayValue();
 	}
 	
 	
@@ -105,6 +126,7 @@ public class VendingMachine {
 	public double returnAllRemainingCoins(){
 		double remainingCoins = currentAmountInsertedInMachine;
 		currentAmountInsertedInMachine = 0;
+		displayValue = defaultDisplayValue;
 		return remainingCoins;
 	}
 	

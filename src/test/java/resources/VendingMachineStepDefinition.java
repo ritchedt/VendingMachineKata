@@ -45,11 +45,11 @@ public class VendingMachineStepDefinition {
 		
 		 while(amountInsertedMachine != amountCurrenlyInMachine){
 			
-			if(0.25 % (amountInsertedMachine-amountCurrenlyInMachine) == 0.25)
+			if((amountInsertedMachine-amountCurrenlyInMachine) >= 0.25)
 				vendingMachine.insertCoin(new Coin("6g", "24mm"));
-			else if(0.10 % (amountInsertedMachine-amountCurrenlyInMachine) == 0.10)
+			else if((amountInsertedMachine-amountCurrenlyInMachine) >= 0.10)
 				vendingMachine.insertCoin(new Coin("2g", "18mm"));
-			else if(0.05 % (amountInsertedMachine-amountCurrenlyInMachine) == 0.05)
+			else if((amountInsertedMachine-amountCurrenlyInMachine) >= 0.05)
 				vendingMachine.insertCoin(new Coin("5g", "21mm"));
 			
 			amountCurrenlyInMachine = vendingMachine.getAmountInsertedIntoMachine();
@@ -77,6 +77,11 @@ public class VendingMachineStepDefinition {
 	@And("^I select the (.*) option$")
 	public void selectingAProductOption(String product){
 		vendingMachine.selectProduct(product);
+	}
+	
+	@And("^I choose the return coins option$")
+	public void returnCoinsOption(){
+		vendingMachine.returnAllRemainingCoins();
 	}
 	
 	
