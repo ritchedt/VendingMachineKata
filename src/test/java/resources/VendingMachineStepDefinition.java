@@ -19,7 +19,7 @@ public class VendingMachineStepDefinition {
 		vendingMachine = new VendingMachine(50, 50, 50, 0, "EXACT CHANGE ONLY");
 	}
 	
-	@Given("^I want to use a vending machine that is sold out of (.*)$")
+	@Given("^I want to use a vending machine that is sold out of (\\w+)$")
 	public void iWantToUseAVendingMachineThatIsSoldOutOfAProduct(String product){
 		
 		if(product.equalsIgnoreCase("cola"))
@@ -85,7 +85,7 @@ public class VendingMachineStepDefinition {
 		assertTrue("Actual: "+ returnedDispayValue, displayValue.equals(returnedDispayValue));
 	}
 	
-	@And("^I select the (.*) option$")
+	@And("^I select the (\\w+) option$")
 	public void selectingAProductOption(String product){
 		vendingMachine.selectProduct(product);
 	}

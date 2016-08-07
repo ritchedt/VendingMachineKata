@@ -77,44 +77,36 @@ public class VendingMachine {
 			returnInvalidCoin(coin);
 	}
 	
+	public void maintainProductInventory(String product, int productInStock){
+		
+		if(changeAmountInMachine != 0){
+			if(productInStock == 0)
+				displayValue = "SOLD OUT";
+			else if(currentAmountInsertedInMachine < productValue.get(product))
+				displayValue = "PRICE $" + String.format("%.2f", productValue.get(product));
+			else{
+				productInStock -= 1;
+				currentAmountInsertedInMachine -= productValue.get(product);
+				if(currentAmountInsertedInMachine==0)
+					displayValue = "THANK YOU";
+					
+				changeAmountInMachine += productValue.get(product);
+			}
+		}
+	}
+	
 	
 	public void selectProduct(String product){
+		
 		switch(product) {
 			case "cola":
-				if(colaInStock == 0)
-					displayValue = "SOLD OUT";
-				else if(currentAmountInsertedInMachine < productValue.get(product))
-					displayValue = "PRICE $" + String.format("%.2f", productValue.get(product));
-				else{
-					colaInStock -= 1;
-					currentAmountInsertedInMachine -= productValue.get(product);
-					if(currentAmountInsertedInMachine==0)
-						displayValue = "THANK YOU";
-				}	
+				maintainProductInventory("cola", colaInStock);
 				break;
 			case "chips":
-				if(chipsInStock == 0)
-					displayValue = "SOLD OUT";
-				else if(currentAmountInsertedInMachine < productValue.get(product))
-					displayValue = "PRICE $" + String.format("%.2f", productValue.get(product));
-				else{
-					chipsInStock -= 1;
-					currentAmountInsertedInMachine -= productValue.get(product);
-					if(currentAmountInsertedInMachine==0)
-						displayValue = "THANK YOU";
-				}
+				maintainProductInventory("chips", chipsInStock);
 				break;
 			case "candy":
-				if(candyInStock == 0)
-					displayValue = "SOLD OUT";
-				else if(currentAmountInsertedInMachine < productValue.get(product))
-					displayValue = "PRICE $" + String.format("%.2f", productValue.get(product));
-				else{
-					candyInStock -= 1;
-					currentAmountInsertedInMachine -= productValue.get(product);
-					if(currentAmountInsertedInMachine==0)
-						displayValue = "THANK YOU";
-				}
+				maintainProductInventory("candy", candyInStock);
 				break;
 		}
 		getDisplayValue();
