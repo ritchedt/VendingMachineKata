@@ -16,7 +16,18 @@ public class VendingMachineStepDefinition {
 	
 	@Given("^I want to use a vending machine that only accepts exact change$")
 	public void iWantToUseAVendingMachineThatOnlyAcceptsExactChange(){
-		vendingMachine = new VendingMachine(0);
+		vendingMachine = new VendingMachine(50, 50, 50, 0, "EXACT CHANGE ONLY");
+	}
+	
+	@Given("^I want to use a vending machine that is sold out of (.*)$")
+	public void iWantToUseAVendingMachineThatIsSoldOutOfAProduct(String product){
+		
+		if(product.equalsIgnoreCase("cola"))
+			vendingMachine = new VendingMachine(0, 50, 50, 25, "INSERT COIN");
+		else if(product.equalsIgnoreCase("chips"))
+			vendingMachine = new VendingMachine(50, 0, 50, 25, "INSERT COIN");
+		else if(product.equalsIgnoreCase("candy"))
+			vendingMachine = new VendingMachine(50, 50, 0, 25, "INSERT COIN");
 	}
 	
 	

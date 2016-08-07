@@ -119,7 +119,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.iWantToUseAVendingMachine()"
 });
 formatter.result({
-  "duration": 87032248,
+  "duration": 88790255,
   "status": "passed"
 });
 formatter.match({
@@ -132,7 +132,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 2498761,
+  "duration": 2649388,
   "status": "passed"
 });
 formatter.match({
@@ -145,7 +145,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.insertCoinInSlot(String)"
 });
 formatter.result({
-  "duration": 915529,
+  "duration": 875684,
   "status": "passed"
 });
 formatter.match({
@@ -158,7 +158,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 46486,
+  "duration": 43769,
   "status": "passed"
 });
 formatter.scenario({
@@ -199,7 +199,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.iWantToUseAVendingMachine()"
 });
 formatter.result({
-  "duration": 28073,
+  "duration": 26563,
   "status": "passed"
 });
 formatter.match({
@@ -212,7 +212,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 82406,
+  "duration": 62182,
   "status": "passed"
 });
 formatter.match({
@@ -225,7 +225,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.insertCoinInSlot(String)"
 });
 formatter.result({
-  "duration": 106253,
+  "duration": 109573,
   "status": "passed"
 });
 formatter.match({
@@ -238,7 +238,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 39241,
+  "duration": 39845,
   "status": "passed"
 });
 formatter.scenario({
@@ -279,7 +279,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.iWantToUseAVendingMachine()"
 });
 formatter.result({
-  "duration": 28072,
+  "duration": 25658,
   "status": "passed"
 });
 formatter.match({
@@ -292,7 +292,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 53126,
+  "duration": 50712,
   "status": "passed"
 });
 formatter.match({
@@ -305,7 +305,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.insertCoinInSlot(String)"
 });
 formatter.result({
-  "duration": 112290,
+  "duration": 123459,
   "status": "passed"
 });
 formatter.match({
@@ -318,7 +318,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 38638,
+  "duration": 44674,
   "status": "passed"
 });
 formatter.scenario({
@@ -358,7 +358,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.iWantToUseAVendingMachine()"
 });
 formatter.result({
-  "duration": 23243,
+  "duration": 27770,
   "status": "passed"
 });
 formatter.match({
@@ -371,7 +371,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 42561,
+  "duration": 53428,
   "status": "passed"
 });
 formatter.match({
@@ -384,14 +384,14 @@ formatter.match({
   "location": "VendingMachineStepDefinition.insertCoinInSlot(String)"
 });
 formatter.result({
-  "duration": 54033,
+  "duration": 61881,
   "status": "passed"
 });
 formatter.match({
   "location": "VendingMachineStepDefinition.allCoinsReturnedInTheChangeSlot()"
 });
 formatter.result({
-  "duration": 20225,
+  "duration": 22941,
   "status": "passed"
 });
 formatter.match({
@@ -404,7 +404,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 39543,
+  "duration": 44071,
   "status": "passed"
 });
 formatter.uri("features/ExactChange.feature");
@@ -448,14 +448,14 @@ formatter.match({
   "location": "VendingMachineStepDefinition.iWantToUseAVendingMachineThatOnlyAcceptsExactChange()"
 });
 formatter.result({
-  "duration": 36826,
+  "duration": 35015,
   "status": "passed"
 });
 formatter.match({
   "location": "VendingMachineStepDefinition.noCoinsInVendingMachine()"
 });
 formatter.result({
-  "duration": 25356,
+  "duration": 15395,
   "status": "passed"
 });
 formatter.match({
@@ -468,7 +468,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 58862,
+  "duration": 56749,
   "status": "passed"
 });
 formatter.uri("features/MakeChange.feature");
@@ -522,7 +522,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.iWantToUseAVendingMachine()"
 });
 formatter.result({
-  "duration": 35619,
+  "duration": 31091,
   "status": "passed"
 });
 formatter.match({
@@ -535,7 +535,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 53730,
+  "duration": 50712,
   "status": "passed"
 });
 formatter.match({
@@ -561,7 +561,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.selectingAProductOption(String)"
 });
 formatter.result({
-  "duration": 61880,
+  "duration": 87840,
   "status": "passed"
 });
 formatter.match({
@@ -574,7 +574,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.allRemainingAmountIsReturnedInChangeSlot(String)"
 });
 formatter.result({
-  "duration": 55240,
+  "duration": 54334,
   "status": "passed"
 });
 formatter.uri("features/ReturnCoins.feature");
@@ -633,7 +633,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.iWantToUseAVendingMachine()"
 });
 formatter.result({
-  "duration": 32299,
+  "duration": 45278,
   "status": "passed"
 });
 formatter.match({
@@ -646,7 +646,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 52523,
+  "duration": 51316,
   "status": "passed"
 });
 formatter.match({
@@ -659,21 +659,21 @@ formatter.match({
   "location": "VendingMachineStepDefinition.insertMoneyIntoTheMachine(String)"
 });
 formatter.result({
-  "duration": 176888,
+  "duration": 184434,
   "status": "passed"
 });
 formatter.match({
   "location": "VendingMachineStepDefinition.returnCoinsOption()"
 });
 formatter.result({
-  "duration": 13584,
+  "duration": 14791,
   "status": "passed"
 });
 formatter.match({
   "location": "VendingMachineStepDefinition.allCoinsReturnedInTheChangeSlot()"
 });
 formatter.result({
-  "duration": 11169,
+  "duration": 12678,
   "status": "passed"
 });
 formatter.match({
@@ -686,7 +686,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 34713,
+  "duration": 46184,
   "status": "passed"
 });
 formatter.uri("features/SelectProduct.feature");
@@ -820,7 +820,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.iWantToUseAVendingMachine()"
 });
 formatter.result({
-  "duration": 26866,
+  "duration": 32600,
   "status": "passed"
 });
 formatter.match({
@@ -833,7 +833,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 48900,
+  "duration": 53730,
   "status": "passed"
 });
 formatter.match({
@@ -846,7 +846,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.insertMoneyIntoTheMachine(String)"
 });
 formatter.result({
-  "duration": 199829,
+  "duration": 198017,
   "status": "passed"
 });
 formatter.match({
@@ -859,7 +859,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.selectingAProductOption(String)"
 });
 formatter.result({
-  "duration": 44675,
+  "duration": 57956,
   "status": "passed"
 });
 formatter.match({
@@ -872,7 +872,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 38939,
+  "duration": 39845,
   "status": "passed"
 });
 formatter.scenario({
@@ -918,7 +918,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.iWantToUseAVendingMachine()"
 });
 formatter.result({
-  "duration": 28676,
+  "duration": 31997,
   "status": "passed"
 });
 formatter.match({
@@ -931,7 +931,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 48297,
+  "duration": 56447,
   "status": "passed"
 });
 formatter.match({
@@ -944,7 +944,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.insertMoneyIntoTheMachine(String)"
 });
 formatter.result({
-  "duration": 137042,
+  "duration": 143683,
   "status": "passed"
 });
 formatter.match({
@@ -957,7 +957,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.selectingAProductOption(String)"
 });
 formatter.result({
-  "duration": 38939,
+  "duration": 44977,
   "status": "passed"
 });
 formatter.match({
@@ -970,7 +970,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 439200,
+  "duration": 472404,
   "status": "passed"
 });
 formatter.scenario({
@@ -1016,7 +1016,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.iWantToUseAVendingMachine()"
 });
 formatter.result({
-  "duration": 28374,
+  "duration": 29280,
   "status": "passed"
 });
 formatter.match({
@@ -1029,7 +1029,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 63390,
+  "duration": 67918,
   "status": "passed"
 });
 formatter.match({
@@ -1042,7 +1042,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.insertMoneyIntoTheMachine(String)"
 });
 formatter.result({
-  "duration": 218544,
+  "duration": 218242,
   "status": "passed"
 });
 formatter.match({
@@ -1055,7 +1055,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.selectingAProductOption(String)"
 });
 formatter.result({
-  "duration": 39242,
+  "duration": 42260,
   "status": "passed"
 });
 formatter.match({
@@ -1068,7 +1068,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 35921,
+  "duration": 34714,
   "status": "passed"
 });
 formatter.scenario({
@@ -1108,7 +1108,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.iWantToUseAVendingMachine()"
 });
 formatter.result({
-  "duration": 41052,
+  "duration": 28676,
   "status": "passed"
 });
 formatter.match({
@@ -1121,7 +1121,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 48901,
+  "duration": 48900,
   "status": "passed"
 });
 formatter.match({
@@ -1134,7 +1134,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.insertMoneyIntoTheMachine(String)"
 });
 formatter.result({
-  "duration": 188056,
+  "duration": 233636,
   "status": "passed"
 });
 formatter.match({
@@ -1147,7 +1147,7 @@ formatter.match({
   "location": "VendingMachineStepDefinition.selectingAProductOption(String)"
 });
 formatter.result({
-  "duration": 75765,
+  "duration": 87840,
   "status": "passed"
 });
 formatter.match({
@@ -1160,7 +1160,101 @@ formatter.match({
   "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
 });
 formatter.result({
-  "duration": 35921,
+  "duration": 38034,
+  "status": "passed"
+});
+formatter.uri("features/SoldOut.feature");
+formatter.feature({
+  "id": "sold-out",
+  "description": "As a customer\r\nI want to be told when the item I have selected is not available\r\nSo that I can select another item",
+  "name": "Sold Out",
+  "keyword": "Feature",
+  "line": 4,
+  "comments": [
+    {
+      "value": "#Author: Drew Ritcher",
+      "line": 1
+    }
+  ]
+});
+formatter.scenario({
+  "id": "sold-out;selecting-a-product",
+  "description": "",
+  "name": "Selecting a product",
+  "keyword": "Scenario",
+  "line": 10,
+  "type": "scenario"
+});
+formatter.step({
+  "name": "I want to use a vending machine that is sold out of candy",
+  "keyword": "Given ",
+  "line": 11
+});
+formatter.step({
+  "name": "the vending machine display shows INSERT COIN",
+  "keyword": "And ",
+  "line": 12
+});
+formatter.step({
+  "name": "I select the candy option",
+  "keyword": "When ",
+  "line": 13
+});
+formatter.step({
+  "name": "the vending machine display shows SOLD OUT",
+  "keyword": "Then ",
+  "line": 14
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "candy",
+      "offset": 52
+    }
+  ],
+  "location": "VendingMachineStepDefinition.iWantToUseAVendingMachineThatIsSoldOutOfAProduct(String)"
+});
+formatter.result({
+  "duration": 84218,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "INSERT COIN",
+      "offset": 34
+    }
+  ],
+  "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
+});
+formatter.result({
+  "duration": 39241,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "candy",
+      "offset": 13
+    }
+  ],
+  "location": "VendingMachineStepDefinition.selectingAProductOption(String)"
+});
+formatter.result({
+  "duration": 39241,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "SOLD OUT",
+      "offset": 34
+    }
+  ],
+  "location": "VendingMachineStepDefinition.vendingMachineDisplay(String)"
+});
+formatter.result({
+  "duration": 35619,
   "status": "passed"
 });
 });
