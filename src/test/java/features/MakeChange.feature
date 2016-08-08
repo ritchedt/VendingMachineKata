@@ -7,7 +7,7 @@ Feature: Make Change
 	So that they will use the vending machine again
 
 
-Scenario: Selecting a product
+Scenario: Selecting a product with a surplus amount and receiving change
 	Given I want to use a vending machine
 	And the vending machine display shows INSERT COIN
 	When I insert $1.00 into the machine

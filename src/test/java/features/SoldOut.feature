@@ -7,7 +7,7 @@ Feature: Sold Out
 	So that I can select another item
 
 
-Scenario: Selecting a product
+Scenario: Selecting a product that is sold out
 	Given I want to use a vending machine that is sold out of candy
 	And the vending machine display shows INSERT COIN
 	When I select the candy option
