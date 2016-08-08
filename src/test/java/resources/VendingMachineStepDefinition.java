@@ -1,5 +1,6 @@
 package resources;
 
+import cucumber.api.java.After;
 import cucumber.api.java.en.*;
 import drewclasses.*;
 import static org.junit.Assert.*;
@@ -7,6 +8,11 @@ import static org.junit.Assert.*;
 public class VendingMachineStepDefinition {
 
 	VendingMachine vendingMachine;
+	
+	@After()
+	public void tearDown(){
+		vendingMachine = null;
+	}
 	
 	
 	@Given("^I want to use a vending machine$")
@@ -46,7 +52,8 @@ public class VendingMachineStepDefinition {
 	
 	@When("^there are no coins inserted into the vending machine$")
 	public void noCoinsInVendingMachine(){
-		assertTrue(vendingMachine.getAmountInsertedIntoMachine() == 0);
+		double insertedIntoMachine = vendingMachine.getAmountInsertedIntoMachine();
+		assertTrue("Actual: " + insertedIntoMachine, insertedIntoMachine == 0);
 	}
 	
 	@When("^I insert \\$(\\d{0,2}.\\d{2}) into the machine$")
@@ -70,12 +77,14 @@ public class VendingMachineStepDefinition {
 	
 	@Then("^all coins are returned in the change slot$")
 	public void allCoinsReturnedInTheChangeSlot(){
-		assertTrue(vendingMachine.getAmountInsertedIntoMachine() == 0);
+		double insertedIntoMachine = vendingMachine.getAmountInsertedIntoMachine();
+		assertTrue("Actual: " + insertedIntoMachine, insertedIntoMachine == 0);
 	}
 	
 	@Then("^\\$(\\d{0,2}.\\d{2}) is returned in the change slot$")
 	public void allRemainingAmountIsReturnedInChangeSlot(String amount){
-		assertTrue(vendingMachine.returnAllRemainingCoins() == Double.parseDouble(amount));
+		double returnedCoins = vendingMachine.getChangeAmountFromReturnedCoins();
+		assertTrue("Actual: "+ returnedCoins, returnedCoins == Double.parseDouble(amount));
 	}
 	
 	

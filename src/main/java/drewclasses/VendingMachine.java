@@ -6,7 +6,7 @@ public class VendingMachine {
 	
 	private int colaInStock, chipsInStock, candyInStock;
 	
-	private double currentAmountInsertedInMachine, changeAmountInMachine;
+	private double currentAmountInsertedInMachine, changeAmountInMachine, returnedChangeAmount;
 	
 	private final String QUARTER_WEIGHT = "6g";
 	private final String QUARTER_SIZE = "24mm";
@@ -86,11 +86,13 @@ public class VendingMachine {
 				displayValue = "PRICE $" + String.format("%.2f", productValue.get(product));
 			else{
 				productInStock -= 1;
+				changeAmountInMachine += productValue.get(product);
 				currentAmountInsertedInMachine -= productValue.get(product);
+				
+				returnAllRemainingCoins();
+				
 				if(currentAmountInsertedInMachine==0)
 					displayValue = "THANK YOU";
-					
-				changeAmountInMachine += productValue.get(product);
 			}
 		}
 	}
@@ -121,11 +123,14 @@ public class VendingMachine {
 		return currentAmountInsertedInMachine;
 	}
 	
-	public double returnAllRemainingCoins(){
-		double remainingCoins = currentAmountInsertedInMachine;
+	public double getChangeAmountFromReturnedCoins(){
+		return returnedChangeAmount;
+	}
+	
+	public void returnAllRemainingCoins(){
+		returnedChangeAmount = currentAmountInsertedInMachine;
 		currentAmountInsertedInMachine = 0;
 		displayValue = defaultDisplayValue;
-		return remainingCoins;
 	}
 	
 	
